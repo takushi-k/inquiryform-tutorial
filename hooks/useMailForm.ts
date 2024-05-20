@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import z from "zod";
 
 export const useMailForm = () => {
+  console.log("useMailForm　カスタムフックコール!!!!!!!")
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -20,6 +22,7 @@ export const useMailForm = () => {
     console.log(values);
     const {username, email, subject, content, file} = values
     console.log(file);
+    console.log(file[0]);
 
     const formData = new FormData();
     formData.append("username", username)

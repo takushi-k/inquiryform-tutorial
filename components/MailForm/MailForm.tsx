@@ -13,7 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MailForm = () => {
-  console.log("MailForm!!!!!!!")
+  console.log("MailFormコール!!!!!!!")
 
   const {form, onSubmit} = useMailForm()
 
@@ -91,6 +91,7 @@ const MailForm = () => {
                   type="file"
                   {...fieldProps}
                   onChange={(event) => {
+                    console.log(event.target.files)
                     onChange(event.target.files)
                   }}
                 />
